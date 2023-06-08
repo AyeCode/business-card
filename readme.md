@@ -84,5 +84,5 @@ macbook_laptop_ipad_apple_computer_mobile_screen_monitor
 * Source: https://pxhere.com/en/photo/1083812
 
 apple_computer_notebook_technology_laptop_screen_electronics_publicdomain
-* License: CC0 Public Domain
+* License: CC0 Public Domain 
 * Source: https://pxhere.com/en/photo/103006
