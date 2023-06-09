@@ -1,3 +1,7 @@
+html {
+	scroll-behavior: smooth;
+  }
+  
 body {
 	--bs-body-bg: var(--wp--preset--color--dark);
 }
