@@ -7,6 +7,9 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+// Downgrade functions
+require_once 'includes/downgrade-functions.php';
+
 /**
  * Enqueue the style.css file.
  *
@@ -15,8 +18,7 @@ defined( 'ABSPATH' ) || exit;
 
  add_action( 'wp_enqueue_scripts', 'portfolio_enqueue_styles' );
  function portfolio_enqueue_styles() {
-	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/assets/styles/style.css');
-	wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
+	wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/assets/css/style.css' );
  }
 
 
@@ -32,3 +34,12 @@ function portfolio_theme_setup()
 }
 
 add_action('after_setup_theme', 'portfolio_theme_setup');
+
+// include admin classes
+add_action('after_setup_theme','blockstrap_portfolio_load_admin');
+function blockstrap_portfolio_load_admin(){
+	if ( is_admin() ) {
+		// Theme admin stuff
+		require_once 'includes/class-blockstrap-admin-child.php';
+	}
+}
